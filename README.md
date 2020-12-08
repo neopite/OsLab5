@@ -28,8 +28,8 @@ public static void unhandledFun(){
 ```
 
 ### Optimization #1 
-The meaning of the first optimization is to replace two accessing to the increment and decrement variable of Array
-Instead of it , we`ll use one access point which will increase and decrease `Vector[0]` by 2 .
+The meaning of the first optimization is to replace two accesing to the increment and decrement variable of Array
+Instead of it , we\`ll use one access point which will increase and decrease `Vector[0]` by 2 .
 
 ``` java
     public static void optimized1(){
