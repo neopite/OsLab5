@@ -27,62 +27,62 @@ public class Main {
 
     public static void unhandledFun(){
 
-        int[] Vector = new int[2];
+        int[] vector = new int[2];
         int res = 0;
 
         for (int j = 500000000; j > 0; j--)
         {
-            Vector [0]++;
-            Vector [0]++;
+            vector [0]++;
+            vector [0]++;
         }
 
-        Vector[1] = Vector[0];
+        vector[1] = vector[0];
 
         for (int j = 0; j < 10000000; j++)
         {
-            Vector [0]--;
-            Vector [0]--;
+            vector [0]--;
+            vector [0]--;
         }
 
-        Vector[1] = Vector[0];
+        vector[1] = vector[0];
 
     }
     public static void optimized1(){
-        int[] Vector = new int[2];
+        int[] vector = new int[2];
         int res = 0;
 
         for (int j = 500000000; j > 0; j--)
         {
-            Vector [0]+= 2;
+            vector [0]+= 2;
         }
 
-        Vector[1] = Vector[0];
+        vector[1] = vector[0];
 
         for (int j = 0; j < 10000000; j++)
         {
-            Vector [0]-=2;
+            vector [0]-=2;
         }
 
-        Vector[1] = Vector[0];
+        vector[1] = vector[0];
 
     }
     public static void optimized2(){
-        int[] Vector = new int[2];
+        int[] vector = new int[2];
         int res = 0;
         for (int j = 500000000; j > 0; j--)
         {
             res += 2;
         }
-        Vector[0] = res;
+        vector[0] = res;
 
-        Vector[1] = Vector[0];
+        vector[1] = vector[0];
 
         for (int j = 0; j < 10000000; j++)
         {
             res -= 2;
         }
-        Vector [0]-=res;
-        Vector[1] = Vector[0];
+        vector [0]-=res;
+        vector[1] = vector[0];
 
     }
 }
