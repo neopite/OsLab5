@@ -1,31 +1,9 @@
-package com.company;
+# Array Optimization
 
-public class Main {
+### Task code
 
-    public static void main(String[] args)
-    {
-        long startTime1 = System.nanoTime();
-
-        unhandledFun();
-
-        long endTime1 = System.nanoTime();
-
-        long durationInNano1 = (endTime1 - startTime1);
-        System.out.println("Unhandled " + durationInNano1);
-
-        long startTime = System.nanoTime();
-        optimized1();
-        long endTime = System.nanoTime();
-        long durationInNano = (endTime - startTime);
-        System.out.println("Opt1      " + durationInNano);
-        long startTime2= System.nanoTime();
-        optimized2();
-        long endTime2 = System.nanoTime();
-        long durationInNano2 = (endTime2 - startTime2);
-        System.out.println("Opt2      " + durationInNano2);
-    }
-
-    public static void unhandledFun(){
+``` java
+public static void unhandledFun(){
 
         int[] Vector = new int[2];
         int res = 0;
@@ -47,6 +25,13 @@ public class Main {
         Vector[1] = Vector[0];
 
     }
+```
+
+### Optimization #1 
+The meaning of the first optimization is to replace two accessing to the increment and decrement variable of Array
+Instead of it , we`ll use one access point which will increase and decrease `Vector[0]` by 2 .
+
+``` java
     public static void optimized1(){
         int[] Vector = new int[2];
         int res = 0;
@@ -66,7 +51,12 @@ public class Main {
         Vector[1] = Vector[0];
 
     }
-    public static void optimized2(){
+```
+
+### Optimization #2 
+The sense of the second optimization is to calculate total increase sum or total decrease sum in separate primitive value with type `int` and replace the value of `Vector[0]` after for loop
+``` java
+ public static void optimized2(){
         int[] Vector = new int[2];
         int res = 0;
         for (int j = 500000000; j > 0; j--)
@@ -85,4 +75,6 @@ public class Main {
         Vector[1] = Vector[0];
 
     }
-}
+```
+### RESULT 
+![alt text](src/img/fir.jpg) 
