@@ -67,7 +67,7 @@ public class Main {
 
     }
     public static void optimizate2(){
-        
+
         int[] Vector = new int[2];
         int res = 0;
         for (int j = 500000000; j > 0; j--)
